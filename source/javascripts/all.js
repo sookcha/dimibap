@@ -1,9 +1,14 @@
 //= require_tree .
 
-$( document ).ready(function() {
+$(document).ready(function() {
+	var now = new Date();
+	var month = now.getMonth() + 1;
+	var nowDate = now.getFullYear().toString() + month.toString() + now.getDate().toString();
+	
+	$(".date-inner").append("Dimibap × " + nowDate);
 	  $.ajax({
 	    type: "GET",
-	    url: "http://cpsoft.kr/cpsoft/dimigo/food.php?d=20141215&output=xml",
+	    url: "http://cpsoft.kr/cpsoft/dimigo/food.php?d=" + nowDate + "&output=xml",
 	    dataType: "xml",
 	    success: parseXml
 	  });
@@ -16,29 +21,24 @@ $( document ).ready(function() {
 			
 		  $(xml).find("breakfast").each(function()
 		  {
-		    console.log("아침 : " + $(this).text());
-				$(".breakfast").append($(this).text());
+				$(".breakfast-inner").append($(this).text());
 		  });
 			
 		  $(xml).find("lunch").each(function()
 		  {
-		    console.log("점심 : " + $(this).text());
-				$(".lunch").append($(this).text());
+				$(".lunch-inner").append($(this).text());
 				
 		  });
 			
 		  $(xml).find("dinner").each(function()
 		  {
-		    console.log("저녁 : " + $(this).text());
-				$(".dinner").append($(this).text());
+				$(".dinner-inner").append($(this).text());
 				
 		  });
 			
 		  $(xml).find("snack").each(function()
 		  {
-		    console.log("간식 : " + $(this).text());
-				$(".snack").append($(this).text());
-				
+				$(".snack-inner").append($(this).text());
 		  });
 			
 			spinner.stop();

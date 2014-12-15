@@ -2,6 +2,7 @@
 
 body {
 	background-color:#ECF0F1;
+	font-family: "AppleSDGothicNeo","AppleSDNeoGothic","맑은 고딕", "Malgun Gothic", "Helvetica", sans-serif;
 }
 
 .wrapper {
@@ -10,15 +11,16 @@ body {
 }
 
 .date {
-	color: #FFF;
-	background-color: #34495E;
+	color: #2C3E50;
+	background-color: #ECF0F1;
 	padding: 0.5em;
-	font-size: 3em;
+	font-size: 2.5em;
+	font-family: 'Source Sans Pro', sans-serif;
 }
 
 .meal {
 	color: #FFF;
-	background-color: #34495E;
+	background-color: #E67E22;
 	padding: 2em;
 	font-size: 1.5em;
 	line-height: 1.3em;
@@ -26,4 +28,10 @@ body {
 
 .breakfast, .lunch, .dinner {
 	margin-bottom:15px;
+}
+
+h1 {
+	margin: 20px 0;
+	font-size: 40px;
+	font-weight: 700;
 }
