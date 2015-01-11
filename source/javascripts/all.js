@@ -2,7 +2,7 @@
 
 $(document).ready(function() {
 	var now = new Date();
-	var month = now.getMonth() + 1;
+	var month = ("0" + (now.getMonth() + 1)).slice(-2);
 	var nowDate = now.getFullYear().toString() + month.toString() + now.getDate().toString();
 	
 	$(".date-inner").append("Dimibap × " + nowDate);
